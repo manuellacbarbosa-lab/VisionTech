@@ -1,0 +1,879 @@
+
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f7ff;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   CABEÇALHO PRINCIPAL
+================================= */
+
+.painel-header {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    padding: 30px 7%;
+    width: 100%;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.topo h1 {
+    font-size: 30px;
+    color: white;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navegacao span {
+    font-size: 14px;
+    color: #eaf2ff;
+}
+
+.btn-receitas,
+.btn-sair {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-receitas:hover,
+.btn-sair:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =================================
+   APRESENTAÇÃO
+================================= */
+
+.apresentacao {
+    margin-top: 45px;
+    max-width: 850px;
+}
+
+.apresentacao h2 {
+    font-size: 29px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.apresentacao p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #eaf2ff;
+}
+
+.apresentacao hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 22px 0;
+}
+
+.apresentacao span {
+    font-size: 13px;
+    color: #eaf2ff;
+}
+
+
+/* =================================
+   CONTEÚDO PRINCIPAL
+================================= */
+
+.conteudo {
+    max-width: 1250px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+
+/* =================================
+   CARTÕES INDICADORES
+================================= */
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card-indicador {
+    background-color: white;
+    border: 1px solid #e1e9f5;
+    border-radius: 15px;
+    padding: 23px;
+    box-shadow: 0 3px 12px rgba(37, 99, 235, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icone {
+    font-size: 25px;
+}
+
+.card-indicador strong {
+    color: #2563eb;
+    font-size: 30px;
+}
+
+.card-indicador p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =================================
+   SEÇÕES
+================================= */
+
+.secao {
+    background-color: white;
+    border: 1px solid #e1e9f5;
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(37, 99, 235, 0.04);
+}
+
+.secao h2 {
+    color: #1e40af;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.secao > p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* =================================
+   BOTÕES DE EXPORTAÇÃO
+================================= */
+
+.botoes-exportacao {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.botoes-exportacao button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botoes-exportacao button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =================================
+   ALERTAS
+================================= */
+
+.mensagem-vazia {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #dbeafe;
+    border-radius: 9px;
+    padding: 16px;
+    font-size: 14px;
+}
+
+
+/* =================================
+   FORMULÁRIO DE PRODUTOS
+================================= */
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.campo input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+}
+
+.campo input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =================================
+   FOTO DO PRODUTO
+================================= */
+
+.foto-produto {
+    margin-top: 25px;
+}
+
+.area-foto {
+    border: 2px dashed #93b4f5;
+    background-color: #f8faff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.area-foto input {
+    border: none;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.area-foto p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
+/* =================================
+   CHECKLIST DE QUALIDADE
+================================= */
+
+.checklist {
+    background-color: #f8faff;
+    border: 1px solid #e1e9f5;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.checklist h3 {
+    color: #1e40af;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.checklist input {
+    accent-color: #2563eb;
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =================================
+   BOTÃO CADASTRAR
+================================= */
+
+.btn-cadastrar {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cadastrar:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =================================
+   PRODUTOS CADASTRADOS
+================================= */
+
+#buscaProduto {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    font-size: 14px;
+    margin: 15px 0 20px;
+    outline: none;
+}
+
+#buscaProduto:focus {
+    border-color: #2563eb;
+}
+
+
+/* =================================
+   FILTROS
+================================= */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filtros button {
+    padding: 10px 16px;
+    background-color: #eff6ff;
+    border: 1px solid #dbeafe;
+    color: #1e40af;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.filtros button:hover,
+.filtros button.ativo {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 900px) {
+
+    .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .painel-header {
+        padding: 25px 20px;
+    }
+
+    .topo {
+        align-items: flex-start;
+    }
+
+    .navegacao {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .apresentacao {
+        margin-top: 30px;
+    }
+
+    .apresentacao h2 {
+        font-size: 23px;
+    }
+
+    .conteudo {
+        padding: 0 15px;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .card-indicador {
+        padding: 16px;
+    }
+
+    .secao {
+        padding: 20px;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacao span {
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   VISIONTECH - PÁGINA MINHAS RECEITAS
+========================================= */
+
+.pagina-receitas {
+    background-color: #f3f8ff;
+}
+
+
+/* CABEÇALHO */
+
+.receitas-header {
+    width: 100%;
+    background: linear-gradient(120deg, #1749a5, #0788cf);
+    color: white;
+    padding: 45px 7%;
+}
+
+.receitas-header-conteudo {
+    max-width: 1010px;
+    margin: auto;
+}
+
+.voltar-produtos {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.voltar-produtos:hover {
+    text-decoration: underline;
+}
+
+.receitas-header h1 {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+.receitas-header p {
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #eaf4ff;
+}
+
+
+/* CONTEÚDO */
+
+.receitas-conteudo {
+    width: 100%;
+    max-width: 1020px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.area-nova-receita,
+.area-exportacao-receitas {
+    margin-bottom: 45px;
+}
+
+.area-nova-receita h2,
+.area-receitas-salvas h2,
+.area-exportacao-receitas h2 {
+    color: #111f39;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+
+/* FORMULÁRIO */
+
+#receitaForm {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #d8e5f5;
+    border-radius: 23px;
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.09);
+}
+
+.receita-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.receita-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.receita-campo label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #172b4d;
+}
+
+.receita-campo input,
+.receita-campo textarea {
+    width: 100%;
+    border: 1px solid #d1deee;
+    border-radius: 12px;
+    padding: 13px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #334155;
+    background-color: white;
+    outline: none;
+    transition: 0.2s;
+}
+
+.receita-campo input:focus,
+.receita-campo textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.receita-campo textarea {
+    resize: vertical;
+    min-height: 115px;
+    line-height: 1.6;
+}
+
+.campo-texto {
+    margin-top: 2px;
+}
+
+
+/* BOTÕES DO FORMULÁRIO */
+
+.botoes-formulario-receita {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-salvar-receita,
+.btn-cancelar-receita {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-salvar-receita {
+    background-color: #0870ce;
+    color: white;
+}
+
+.btn-salvar-receita:hover {
+    background-color: #075bb0;
+}
+
+.btn-cancelar-receita {
+    background-color: #e5edf8;
+    color: #1e40af;
+}
+
+
+/* LISTA DE RECEITAS */
+
+.area-receitas-salvas {
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
+
+.titulo-lista-receitas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#buscaReceita {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d1deee;
+    border-radius: 11px;
+    font-size: 14px;
+    margin-bottom: 22px;
+    outline: none;
+}
+
+#buscaReceita:focus {
+    border-color: #2563eb;
+}
+
+
+/* MENSAGEM VAZIA */
+
+.receitas-vazias {
+    padding: 40px 20px;
+    border: 1px dashed #c9daee;
+    border-radius: 18px;
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* CARTÕES */
+
+#listaReceitas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.receita-card {
+    min-width: 0;
+    background-color: white;
+    border: 1px solid #dce7f5;
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.06);
+}
+
+.receita-card-topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.receita-card h3 {
+    color: #1e40af;
+    font-size: 19px;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+.etiqueta-receita {
+    color: #2563eb;
+    background-color: #eff6ff;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.icone-receita {
+    font-size: 25px;
+    color: #2563eb;
+}
+
+.receita-rendimento {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.receita-resumo {
+    background-color: #f8faff;
+    border-radius: 11px;
+    padding: 14px;
+    margin-bottom: 17px;
+}
+
+.receita-resumo h4 {
+    color: #1e40af;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.receita-resumo p {
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    max-height: 110px;
+    overflow: hidden;
+}
+
+
+/* AÇÕES DOS CARTÕES */
+
+.receita-acoes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.receita-acoes button {
+    border: none;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-visualizar-receita {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.btn-editar-receita {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.btn-excluir-receita {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.receita-acoes button:hover {
+    filter: brightness(0.95);
+}
+
+
+/* EXPORTAÇÃO */
+
+.area-exportacao-receitas {
+    margin-top: 45px;
+}
+
+.card-exportacao-receitas {
+    background-color: white;
+    border: 1px solid #dce7f5;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.07);
+}
+
+.card-exportacao-receitas p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.botoes-exportacao-receitas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.botoes-exportacao-receitas button {
+    padding: 12px 19px;
+    border: none;
+    border-radius: 11px;
+    background-color: #0870ce;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botoes-exportacao-receitas button:last-child {
+    background-color: #dbeafe;
+    color: #1749a5;
+}
+
+.botoes-exportacao-receitas button:hover {
+    filter: brightness(0.94);
+}
+
+
+/* RODAPÉ */
+
+.rodape-receitas {
+    text-align: center;
+    padding: 25px 15px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .receitas-header {
+        padding: 30px 22px;
+    }
+
+    .receitas-header h1 {
+        font-size: 27px;
+    }
+
+    .receitas-conteudo {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .receita-campos {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #receitaForm {
+        padding: 19px;
+    }
+
+    #listaReceitas {
+        grid-template-columns: 1fr;
+    }
+
+    .area-nova-receita h2,
+    .area-receitas-salvas h2,
+    .area-exportacao-receitas h2 {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .receita-acoes button {
+        flex: 1;
+        padding: 9px 7px;
+    }
+
+    .botoes-exportacao-receitas {
+        flex-direction: column;
+    }
+
+    .botoes-exportacao-receitas button {
+        width: 100%;
+    }
+
+}

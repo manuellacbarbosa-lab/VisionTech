@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionTech - Entrar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+</head>
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <h1>VisionTech</h1>
+
+            <h2>Entrar na sua conta</h2>
+
+            <p class="description">
+                Acesse para cadastrar produtos e ver seus alertas de vencimento.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="voce@exemplo.com"
+                    required
+                >
+
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Mínimo de 6 caracteres"
+                    minlength="6"
+                    required
+                >
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="separator">
+                <span>ou</span>
+            </div>
+
+            <button class="btn-google" type="button">
+                Continuar com o Google
+            </button>
+
+            <p class="register">
+                Ainda não tem conta?
+                <a href="cadastro.html">Criar conta</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

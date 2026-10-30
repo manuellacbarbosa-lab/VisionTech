@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionTech - Minhas Receitas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+</head>
+
+<body class="pagina-receitas">
+
+    <!-- CABEÇALHO -->
+    <header class="receitas-header">
+        <div class="receitas-header-conteudo">
+
+            <a href="painel.html" class="voltar-produtos">
+                ← Voltar aos produtos
+            </a>
+
+            <h1> 🧑‍🍳 Minhas receitas</h1>
+
+            <p>
+                Escreva suas receitas com ingredientes e modo de preparo.
+                Tudo fica salvo neste dispositivo e poderá ser consultado
+                sempre que necessário.
+            </p>
+
+        </div>
+    </header>
+
+
+    <main class="receitas-conteudo">
+
+        <!-- CADASTRO DE RECEITAS -->
+        <section class="area-nova-receita">
+
+            <h2 id="tituloFormularioReceita">
+                Escrever nova receita
+            </h2>
+
+            <form id="receitaForm">
+
+                <input type="hidden" id="receitaId">
+
+                <div class="receita-campos">
+
+                    <div class="receita-campo">
+                        <label for="tituloReceita">
+                            Título da receita *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="tituloReceita"
+                            placeholder="Ex.: Bolo de fubá cremoso"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="receita-campo">
+                        <label for="rendimentoReceita">
+                            Rendimento / tempo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="rendimentoReceita"
+                            placeholder="Ex.: 8 porções · 45 min"
+                            maxlength="100"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="receita-campo campo-texto">
+                    <label for="ingredientesReceita">
+                        Ingredientes *
+                    </label>
+
+                    <textarea
+                        id="ingredientesReceita"
+                        placeholder="Ex.:
+1 xícara de fubá
+2 ovos
+1 litro de leite"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <div class="receita-campo campo-texto">
+                    <label for="preparoReceita">
+                        Modo de preparo *
+                    </label>
+
+                    <textarea
+                        id="preparoReceita"
+                        placeholder="Descreva o passo a passo da receita..."
+                        rows="6"
+                        required
+                    ></textarea>
+                </div>
+
+
+                <div class="botoes-formulario-receita">
+
+                    <button type="submit" class="btn-salvar-receita">
+                        Salvar receita
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelarEdicaoReceita"
+                        class="btn-cancelar-receita"
+                        hidden
+                    >
+                        Cancelar edição
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- RECEITAS SALVAS -->
+        <section class="area-receitas-salvas">
+
+            <div class="titulo-lista-receitas">
+                <h2>
+                    Receitas salvas
+                    (<span id="totalReceitas">0</span>)
+                </h2>
+            </div>
+
+            <input
+                type="search"
+                id="buscaReceita"
+                placeholder="Buscar receita pelo nome..."
+            >
+
+            <div id="listaReceitas">
+
+                <p class="receitas-vazias">
+                    Você ainda não escreveu nenhuma receita.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPORTAÇÃO -->
+        <section class="area-exportacao-receitas">
+
+            <h2>Exportar relatórios</h2>
+
+            <div class="card-exportacao-receitas">
+
+                <p>
+                    Baixe um relatório com seus produtos e receitas
+                    em PDF ou Excel.
+                </p>
+
+                <div class="botoes-exportacao-receitas">
+
+                    <button
+                        type="button"
+                        id="exportarPDFCompleto"
+                    >
+                        ↓ Exportar PDF
+                    </button>
+
+                    <button
+                        type="button"
+                        id="exportarExcelCompleto"
+                    >
+                        ▤ Exportar Excel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape-receitas">
+        <p>VisionTech © 2026 — Organização e qualidade.</p>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+    <script src="receitas.js"></script>
+
+</body>
+</html>

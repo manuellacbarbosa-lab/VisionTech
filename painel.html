@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionTech - Painel Principal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="painel-header">
+
+        <div class="topo">
+            <h1>VisionTech</h1>
+
+            <nav class="navegacao">
+                <button
+                    type="button"
+                    class="btn-receitas"
+                    onclick="window.location.href='receitas.html'"
+                >
+                    🧑‍🍳 Minhas Receitas
+                </button>
+                <span id="saudacao">Olá, Usuário!</span>
+
+                <button type="button" class="btn-sair">
+                    Sair
+                </button>
+            </nav>
+        </div>
+
+        <div class="apresentacao">
+            <h2>Controle de validade e qualidade de seus produtos</h2>
+
+            <p>
+                Cadastre produtos com fotos, registre os dados de validade,
+                acompanhe o que está perto de vencer, receba alertas e
+                realize checklist de qualidade.
+            </p>
+
+            <hr>
+
+            <span>
+                Tudo organizado de forma rápida e acessível.
+            </span>
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo">
+
+        <!-- INDICADORES -->
+        <section class="indicadores">
+
+            <div class="card-indicador">
+                <span class="icone">📦</span>
+                <strong id="totalProdutos">0</strong>
+                <p>Produtos cadastrados</p>
+            </div>
+
+            <div class="card-indicador">
+                <span class="icone">⚠️</span>
+                <strong id="produtosVencendo">0</strong>
+                <p>Vencem até 7 dias</p>
+            </div>
+
+            <div class="card-indicador">
+                <span class="icone">🔔</span>
+                <strong id="produtosVencidos">0</strong>
+                <p>Já vencidos</p>
+            </div>
+
+            <div class="card-indicador">
+                <span class="icone">📋</span>
+                <strong id="verificacoesPendentes">0</strong>
+                <p>Verificações pendentes</p>
+            </div>
+
+        </section>
+
+
+        <!-- EXPORTAÇÃO DE RELATÓRIOS -->
+        <section class="secao">
+            <h2>Exportação de relatórios</h2>
+
+            <p>
+                Gere um relatório completo com seus produtos e receitas.
+            </p>
+
+            <div class="botoes-exportacao">
+                <button type="button" id="exportarPDF">
+                    Exportar em PDF
+                </button>
+
+                <button type="button" id="exportarExcel">
+                    Exportar em Excel
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ALERTAS -->
+        <section class="secao">
+            <h2>⚠️ Alertas de vencimento</h2>
+
+            <div id="listaAlertas">
+                <p class="mensagem-vazia">
+                    Nenhum produto vencido ou próximo do vencimento.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CADASTRO DE PRODUTOS -->
+        <section class="secao cadastro-produto">
+
+            <h2>Cadastro de produtos</h2>
+
+            <p>
+                Preencha as informações para cadastrar um novo produto.
+            </p>
+
+            <form id="produtoForm">
+
+                <div class="campos">
+
+                    <div class="campo">
+                        <label for="nomeProduto">Nome do produto</label>
+                        <input
+                            type="text"
+                            id="nomeProduto"
+                            placeholder="Digite o nome do produto"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="lote">Lote</label>
+                        <input
+                            type="text"
+                            id="lote"
+                            placeholder="Digite o lote"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="categoria">Categoria</label>
+                        <input
+                            type="text"
+                            id="categoria"
+                            placeholder="Digite a categoria"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="quantidade">Quantidade</label>
+                        <input
+                            type="number"
+                            id="quantidade"
+                            min="1"
+                            placeholder="Quantidade"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="validade">Data de validade</label>
+                        <input
+                            type="date"
+                            id="validade"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO DO PRODUTO -->
+                <div class="campo foto-produto">
+
+                    <label for="foto">
+                        Foto do produto
+                    </label>
+
+                    <div class="area-foto">
+                        <input
+                            type="file"
+                            id="foto"
+                            accept="image/*"
+                        >
+
+                        <p>
+                            Envie ou tire uma foto do produto.
+                            Arquivo de até 4 MB.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- CHECKLIST -->
+                <div class="checklist">
+
+                    <h3>Lista de verificação de qualidade</h3>
+
+                    <label>
+                        <input type="checkbox" name="qualidade" value="integridade">
+                        Produto íntegro
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="qualidade" value="rotulo">
+                        Rótulo legível com validade
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="qualidade" value="temperatura">
+                        Temperatura de armazenamento correta
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="qualidade" value="aparencia">
+                        Aparência, cor e odor normais
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="qualidade" value="armazenamento">
+                        Armazenado em local correto
+                    </label>
+
+                </div>
+
+                <button type="submit" class="btn-cadastrar">
+                    Cadastrar produto
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PRODUTOS CADASTRADOS -->
+        <section class="secao produtos-cadastrados">
+
+            <h2>Produtos cadastrados</h2>
+
+            <input
+                type="search"
+                id="buscaProduto"
+                placeholder="Buscar por nome, categoria ou lote..."
+            >
+
+            <div class="filtros">
+
+                <button type="button" data-filtro="todos">Todos</button>
+
+                <button type="button" data-filtro="breve">
+                    Vencem em breve
+                </button>
+
+                <button type="button" data-filtro="atencao">
+                    Atenção
+                </button>
+
+                <button type="button" data-filtro="emdia">
+                    Em dia
+                </button>
+
+                <button type="button" data-filtro="vencidos">
+                    Vencidos
+                </button>
+
+            </div>
+
+            <div id="listaProdutos">
+
+                <p class="mensagem-vazia">
+                    Nenhum produto cadastrado ainda.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
