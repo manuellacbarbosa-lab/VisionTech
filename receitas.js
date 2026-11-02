@@ -52,35 +52,43 @@ function abrirBancoReceitas() {
 // =========================================
 
 async function salvarReceitaBanco(receita) {
-
     const banco = await abrirBancoReceitas();
 
     return new Promise((resolve, reject) => {
-
-        const transacao = banco.transaction(
-            "receitas",
-            "readwrite"
-        );
-
+        const transacao = banco.transaction("receitas", "readwrite");
         const armazenamento = transacao.objectStore("receitas");
+
+        let idSalvo;
 
         const requisicao = receita.id
             ? armazenamento.put(receita)
             : armazenamento.add(receita);
 
-        requisicao.onsuccess = () => resolve(requisicao.result);
-        requisicao.onerror = () => reject(requisicao.error);
+        requisicao.onsuccess = () => {
+            idSalvo = requisicao.result;
+        };
 
-        transacao.oncomplete = () => banco.close();
+        requisicao.onerror = () => {
+            banco.close();
+            reject(requisicao.error);
+        };
+
+        transacao.oncomplete = () => {
+            banco.close();
+            resolve(idSalvo);
+        };
 
         transacao.onerror = () => {
             banco.close();
             reject(transacao.error);
         };
 
+        transacao.onabort = () => {
+            banco.close();
+            reject(transacao.error || new Error("Transação cancelada."));
+        };
     });
 }
-
 
 // =========================================
 // BUSCAR RECEITAS

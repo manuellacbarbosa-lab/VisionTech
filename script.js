@@ -72,54 +72,6 @@ async function buscarNoBanco() {
 
 
 /* =====================================
-   LOGIN E CADASTRO DE USUÁRIOS
-===================================== */
-
-const formularioLogin = document.getElementById("loginForm");
-
-if (formularioLogin) {
-    formularioLogin.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const senha = document.getElementById("senha").value;
-
-        if (senha.length < 6) {
-            alert("A senha precisa ter pelo menos 6 caracteres!");
-            return;
-        }
-
-        alert("Validação realizada! A autenticação real será configurada depois.");
-    });
-}
-
-const formularioCadastro = document.getElementById("cadastroForm");
-
-if (formularioCadastro) {
-    formularioCadastro.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const senha = document.getElementById("senha").value;
-        const confirmarSenha = document.getElementById("confirmarSenha").value;
-        const nome = document.getElementById("nome").value.trim();
-
-        if (senha.length < 6) {
-            alert("A senha precisa ter pelo menos 6 caracteres!");
-            return;
-        }
-
-        if (senha !== confirmarSenha) {
-            alert("As senhas não são iguais!");
-            return;
-        }
-
-        localStorage.setItem("visiontechNome", nome.split(" ")[0]);
-
-        alert("Cadastro validado! A autenticação será configurada depois.");
-    });
-}
-
-
-/* =====================================
    ELEMENTOS DO PAINEL
 ===================================== */
 
@@ -607,6 +559,82 @@ if (formularioProduto) {
     atualizarPainel().catch(erro => {
         console.error(erro);
         alert("Não foi possível carregar os produtos.");
+    });
+}
+
+/* =====================================
+   LOGIN E CADASTRO DE USUÁRIOS
+===================================== */
+
+// LOGIN
+const formularioLogin = document.getElementById("loginForm");
+
+if (formularioLogin) {
+    formularioLogin.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
+
+        if (senha.length < 6) {
+            alert("A senha precisa ter pelo menos 6 caracteres!");
+            return;
+        }
+
+        const emailCadastrado = localStorage.getItem("visiontechEmail");
+
+        if (!emailCadastrado) {
+            alert("Você ainda não possui cadastro. Crie sua conta primeiro!");
+            return;
+        }
+
+        if (email.toLowerCase() !== emailCadastrado.toLowerCase()) {
+            alert("E-mail não encontrado neste navegador.");
+            return;
+        }
+
+        if (!localStorage.getItem("visiontechNome")) {
+            localStorage.setItem("visiontechNome", email.split("@")[0]);
+        }
+
+        window.location.href = "painel.html";
+    });
+}
+
+
+// CADASTRO
+const formularioCadastro = document.getElementById("cadastroForm");
+
+if (formularioCadastro) {
+    formularioCadastro.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmarSenha").value;
+
+        if (!nome || !email) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        if (senha.length < 6) {
+            alert("A senha precisa ter pelo menos 6 caracteres!");
+            return;
+        }
+
+        if (senha !== confirmarSenha) {
+            alert("As senhas não são iguais!");
+            return;
+        }
+
+        localStorage.setItem("visiontechNome", nome.split(" ")[0]);
+        localStorage.setItem("visiontechEmail", email);
+
+        alert("Cadastro realizado com sucesso!");
+
+        window.location.href = "painel.html";
     });
 }
 

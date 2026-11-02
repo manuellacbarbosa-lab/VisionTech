@@ -877,3 +877,142 @@ body {
     }
 
 }
+
+/* =========================================
+   VISIONTECH - TELA DE LOGIN
+========================================= */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff, #bfdbfe);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(30, 64, 175, 0.13);
+}
+
+.login-card h1 {
+    color: #2563eb;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-card h2 {
+    color: #1e293b;
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-card .description {
+    color: #64748b;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+
+
+#loginForm label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+}
+
+#loginForm input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.btn-login,
+.btn-google {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-login {
+    background-color: #2563eb;
+    color: white;
+    margin-top: 12px;
+}
+
+.btn-login:hover {
+    background-color: #1d4ed8;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0;
+    color: #94a3b8;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+.btn-google {
+    background-color: white;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-google:hover {
+    background-color: #f8fafc;
+}
+
+.register {
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+.register a {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 28px 22px;
+    }
+}
+
