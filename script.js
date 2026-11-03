@@ -637,5 +637,17 @@ if (formularioCadastro) {
         window.location.href = "painel.html";
     });
 }
+// BOTÃO SAIR
+const botaoSair = document.querySelector(".btn-sair");
 
+if (botaoSair) {
+    botaoSair.addEventListener("click", function () {
+        const confirmar = confirm("Deseja realmente sair da sua conta?");
+
+        if (confirmar) {
+            localStorage.removeItem("visiontechNome");
+            window.location.href = "index.html";
+        }
+    });
+}
 

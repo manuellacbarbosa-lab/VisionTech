@@ -878,6 +878,7 @@ body {
 
 }
 
+
 /* =========================================
    VISIONTECH - TELA DE LOGIN
 ========================================= */
@@ -923,27 +924,41 @@ body {
 }
 
 
+/* =========================================
+   FORMULÁRIOS DE LOGIN E CADASTRO
+========================================= */
 
-#loginForm label {
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.login-card form label {
+    display: block;
     color: #334155;
     font-size: 14px;
     font-weight: bold;
     margin-top: 8px;
 }
 
-#loginForm input {
+.login-card form input {
+    display: block;
     width: 100%;
     padding: 14px;
     border: 1px solid #cbd5e1;
     border-radius: 9px;
     font-size: 14px;
     outline: none;
+    background-color: white;
 }
 
-#loginForm input:focus {
+.login-card form input:focus {
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
 }
+
 
 .btn-login,
 .btn-google {
@@ -1016,3 +1031,58 @@ body {
     }
 }
 
+
+/* =========================================
+   FOTOS DOS PRODUTOS
+========================================= */
+
+.produto-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    background: white;
+    border: 1px solid #e1e9f5;
+    border-radius: 14px;
+}
+
+.produto-card > img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.produto-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sem-foto {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #eff6ff;
+    color: #64748b;
+    border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+    .produto-card {
+        flex-direction: column;
+    }
+
+    .produto-card > img,
+    .sem-foto {
+        width: 100%;
+        max-width: 100%;
+        height: 160px;
+    }
+}
