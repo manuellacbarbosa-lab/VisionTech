@@ -351,6 +351,13 @@ function atualizarLista() {
                     </span>
 
                     <p>Checklist: ${produto.qualidade.length}/5 itens verificados</p>
+                    <button
+                      type="button"
+                      class="btn-excluir"
+                      onclick="excluirProduto(${produto.id})"
+                      style="background-color: #dc2626; color: white; border: none; padding: 9px 14px; border-radius: 8px; cursor: pointer; margin-top: 10px;">
+                      Excluir produto
+                  </button>
                 </div>
             </article>
         `;
