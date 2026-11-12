@@ -651,3 +651,42 @@ if (botaoSair) {
     });
 }
 
+async function removerDoBanco(id) {
+    const banco = await abrirBanco();
+
+    return new Promise((resolve, reject) => {
+        const transacao = banco.transaction(ARMAZENAMENTO, "readwrite");
+        const requisicao = transacao.objectStore(ARMAZENAMENTO).delete(Number(id));
+
+        requisicao.onsuccess = () => resolve();
+        requisicao.onerror = () => reject(requisicao.error);
+
+        transacao.oncomplete = () => banco.close();
+        transacao.onerror = () => reject(transacao.error);
+    });
+}
+
+async function excluirProduto(id) {
+    const produto = produtos.find(item => item.id === Number(id));
+
+    if (!produto) {
+        alert("Produto não encontrado.");
+        return;
+    }
+
+    const confirmar = confirm(
+        `Deseja realmente excluir o produto "${produto.nome}"?`
+    );
+
+    if (!confirmar) return;
+
+    try {
+        await removerDoBanco(id);
+        await atualizarPainel();
+        alert("Produto excluído com sucesso!");
+    } catch (erro) {
+        console.error(erro);
+        alert("Não foi possível excluir o produto.");
+    }
+}
+
